@@ -23,7 +23,7 @@ cursor: pointer;
 
 .add-button-2 {
 	position: absolute;
-	bottom: 300px;
+	bottom: 335px;
 }
 
 .add-button-1 {
@@ -34,9 +34,7 @@ cursor: pointer;
 
 .add-button-3 {
 	position: absolute;
-	bottom: 400px;
-	right: 635px;
-	display: none;
+	bottom: 300px;
 }
 
 .scoreContainer {
@@ -48,12 +46,51 @@ cursor: pointer;
 	border-radius: 10px;
 
 }
+
+.prestigeContainer {
+	background-color: #2e93c9;
+	position: absolute;
+	right: 150px;
+	font-size: 15px;
+	border-radius: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-shadow: -1px -1px 0 #0971a8, 1px -1px 0 #0971a8, -1px 1px 0 #0971a8, 1px 1px 0 #0971a8
+}
+
+
+#prestigeButton {
+display: none;
+}
+
+#prestigeButton-3 {
+display: none;
+}
+
+.prestigeButton-2 {
+	border-radius: 10px;
+	background-color: #2e93c9;
+	border: none;
+	box-shadow: 0 0 0 2px black;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 20;
+	cursor: pointer;
+	width: 20%;
+	}
+	
+.prestigeButton-2:active {
+	background-color: #227bab;
+	}
+
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2/dist/break_infinity.js"></script>
 <script src="script.js"></script>
 
 <body>
+
+<div id="main">
 
 <div align="center">
 	<p><font color="black" size="8">Basic Incremental v2</font></p>
@@ -65,16 +102,25 @@ cursor: pointer;
 	<p><font color="black" size="4">Points per click: <snap id=ppc>1</snap></font></p>
 </div>
 
+<div id="prestigeButton-3" class="prestigeContainer">
+	<p><font color="#14a9fa" size="5">Prestige Points: <snap id=pp>0</snap></font></p>
+</div>
+
 <div>
-	<button onclick="addPoint()" type="button" class="add-button add-button-1">Get Point</button>
+	<button onclick="addPoint(), viewPrestige()" type="button" class="add-button add-button-1">Get Point</button>
 	</div>
 	
 	<button onclick="addPointUpgrade(2)" type="button" class="add-button add-button-2">
-	2x Points [Cost: <snap id="apuc">50</snap> Points] -- <snap id="apuv">0</snap>/<snap id=apul>20</snap>
+	2x Points [Cost: <snap id="apuc">50</snap> Points] -- <snap id="apuv">0</snap>/<snap id=apul>30</snap>
 	</button>
 	
-	<button type="button" class="add-button add-button-3">
-		2.5 Points [Cost: <snap id="apuc2">1M</snap>
+	<button type="button" onclick="addPointUpgrade2(2.5)" class="add-button add-button-3">
+		2.5x Points [Cost: <snap id="apuc2">1e7</snap> Points] -- <snap id="apuv2">0</snap>/<snap id=apul2>1e6</snap>
 	</button>
+	
+	<div id="prestigeButton">
+		<button class="prestigeButton-2" onclick="prestige(), justRefreshValues()"> Reset points and points Upgrade for: +<snap id="ppget">0</snap> Prestige Points</button>
+	</div>
+</div>
 </body>
 </html>
