@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title> Basic Incremental v2</title>
+</head>
+
+<style>
+body {
+	background-color: rgb(100, 100, 100);
+}
+
+.add-button { 
+border: none;
+box-shadow: 0 0 0 2px black;
+padding-left: 20px;
+padding-right: 20px;
+font-size: 20;
+cursor: pointer;
+}
+
+.add-button:active {
+  background-color: #cccccc;
+}
+
+.add-button-2 {
+	position: absolute;
+	bottom: 300px;
+}
+
+.add-button-1 {
+	position: absolute;
+	bottom: 400px;
+	right: 635px;
+}
+
+.scoreContainer {
+	background-color: #bfbfbf;
+	width: 40%;
+	position: absolute;
+	right: 422px;
+	font-size: 15px;
+	border-radius: 10px;
+
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2/dist/break_infinity.js"></script>
+<script src="script.js"></script>
+
+<body>
+
+<div align="center">
+	<p><font color="black" size="8">Basic Incremental v2</font></p>
+</div>
+
+<div class="scoreContainer" align="center">
+	<p><font color="black" size="4">Points:<snap id=point>0</snap></font></p>
+	
+	<p><font color="black" size="4">Points per click: <snap id=ppc>1</snap></font></p>
+</div>
+
+<div>
+	<button onclick="addPoint()" type="button" class="add-button add-button-1">Get Point</button>
+	</div>
+	
+	<button onclick="addPointUpgrade(2)" type="button" class="add-button add-button-2">
+	2x Points [Cost: <snap id="apuc">50</snap> Points] -- <snap id="apuv">0</snap>
+	</button>
+</body>
+</html>
