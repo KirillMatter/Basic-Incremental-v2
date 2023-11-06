@@ -63,7 +63,7 @@ function viewPP() {
 	document.getElementById("pp").innerHTML = pp.toPrecision(3);
 }
 
-setInterval("viewPP()", 1000);
+setInterval("viewPP(), viewPrestige()", 1000);
 
 function justRefreshValues() {
 	document.getElementById("point").innerHTML = point.toPrecision(3);
